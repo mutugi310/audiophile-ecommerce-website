@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      
+      <div className=' max-w-screen max-h-scren flex flex-col'>
         <Header />
         <main>
           <Routes>
@@ -26,6 +26,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+      </div>
      
     </>
   )
