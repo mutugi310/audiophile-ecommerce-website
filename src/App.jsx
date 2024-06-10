@@ -14,9 +14,9 @@ function App() {
 
   return (
     <>
-      <div className=' max-w-screen max-h-scren flex flex-col'>
+      <div className=' max-w-screen min-h-screen flex flex-col'>
         <Header />
-        <main>
+        <main className='flex-grow'>
           <Routes>
             <Route path='/'  element={<Home />} />
             <Route path='headphones' element={<Headphones />} />
