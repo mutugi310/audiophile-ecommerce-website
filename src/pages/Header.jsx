@@ -8,18 +8,20 @@ function Header() {
     setOpenMenu(!openMenu)
   }
   return (
-    <header className='bg-pBlack text-pWhite w-full m-0 border-b-2 border-b-white'>
-      <div  className=' container flex gap-4 mx-auto align-middle justify-between p-4 w-full'>
-        <div>
-          <button onClick={toggleMenu}>
-            {openMenu?<FiX size={20}/>:<FiMenu size={20}/> }
+    <header className='relative bg-pBlack text-pWhite w-full m-0 border-b-2 border-b-white'>
+      <div  className=' container flex mx-auto align-middle justify-between p-4 w-full  '>
+        {/* hamburger button for small and mideum devices */}
+        <div className='lg:hidden'>
+          <button  onClick={toggleMenu}>
+            {!openMenu&&<FiMenu size={20}/> }
           </button>
         </div>
         <div>
           <NavLink to="/" className='hover:text-pBrown'>Audiophile</NavLink>
         </div>
-        <nav className='hidden sm:flex' >
-          <ul className='flex gap-3'>
+        {/* Desktop menu */}
+        <nav className='hidden lg:flex flex-grow justify-center' >
+          <ul className='flex gap-6'>
             <li>
               <NavLink to='/' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Home</NavLink>
             </li>
@@ -40,23 +42,34 @@ function Header() {
         </NavLink>
         </div>
       </div>
+    {/* mobile navigation */}
       {openMenu && 
-          (<nav className='sm:hidden' >
-          <ul className='flex-col gap-3 px-4'>
-            <li>
-              <NavLink to='/' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Home</NavLink>
-            </li>
-            <li>
-              <NavLink to='headphones' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Headphone</NavLink>
-            </li>
-            <li>
-              <NavLink to='speakers' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Speakers</NavLink>
-            </li>
-            <li>
-              <NavLink to='earphones' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Earphones</NavLink>
-            </li>
-          </ul>
-        </nav>)
+          (
+          <div className='lg:hidden fixed inset-0 bg-opacity-80 z-50 flex '>
+            <div className='relative top-0 left-0 w-1/2 h-1/2 bg-pBlack text-pWhite p-6 sm:w-1/3 '>
+            <button className='absolute top-12 right-4 ' onClick={toggleMenu}>
+              <FiX size={20} />
+            </button>
+              <nav className='pt-20'>
+              <ul className='flex-col gap-3 px-4'>
+                <li>
+                  <NavLink to='/' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to='headphones' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Headphone</NavLink>
+                </li>
+                <li>
+                  <NavLink to='speakers' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Speakers</NavLink>
+                </li>
+                <li>
+                  <NavLink to='earphones' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>Earphones</NavLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className='w-1/2 h-full bg-black bg-opacity-50' onClick={toggleMenu}></div>
+        </div>
+        )
           }
     </header>
   
