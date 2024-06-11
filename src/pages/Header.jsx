@@ -8,8 +8,8 @@ function Header() {
     setOpenMenu(!openMenu)
   }
   return (
-    <header className='relative bg-pBlack text-pWhite w-full m-0 border-b-2 border-b-white'>
-      <div  className=' container flex mx-auto align-middle justify-between p-4 w-full  '>
+    <header className='relative bg-pBlack  text-pWhite w-full m-0 '>
+      <div  className=' container flex mx-auto align-middle justify-between p-4 w-full border-b-2 border-b-white border-opacity-5 '>
         {/* hamburger button for small and mideum devices */}
         <div className='lg:hidden'>
           <button  onClick={toggleMenu}>
