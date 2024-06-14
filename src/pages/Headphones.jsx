@@ -15,7 +15,6 @@ function Headphones(title) {
       <ProductDetailsCard
         productName={'XX59 Headphones'}
         imgSrc={XX99Mark2ImG}
-        title={'Speaker 1'}
         description={'Experience the exceptional sound quality with ZX9 Speaker, designed to deliver superior audio performance for your home entertainment.'}
         linkTo={'headphones'}
         reverse={false}
