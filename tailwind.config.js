@@ -13,7 +13,7 @@ export default {
         pBlack2:'RGB(16,16,16)',
         pWhite: 'RGB(255,255,255)',
         pWhite2: 'RGB(250,250,250)',
-        pWhite3: 'RGB(241,241,241)',
+        pGray: 'RGB(241,241,241)',
       }
     },
   },
