@@ -10,7 +10,7 @@ function Button({ children, to, onClick, type='button', variant='cta', className
     const variantClasses = {
         cta: 'bg-pBrown text-white hover:bg-pDarkBrown',
         cta2: 'text-pBlack hover:bg-pBlack hover:text-white',
-        shop: 'bg-none border-none text-white  hover:text-pBrown trasition duration-300',
+        shop: 'bg-none border-none text-pBlack2 font-medium  hover:text-pBrown trasition duration-300',
         increment: 'bg-green-500 text-white hover:bg-green-700',
         decrement: 'bg-red-500 text-white hover:bg-red-700',
         checkout: 'bg-black text-white hover:bg-gray-800',
