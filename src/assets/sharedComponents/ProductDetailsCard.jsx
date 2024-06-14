@@ -16,7 +16,7 @@ function ProductDetailsCard({ productName, imgSrc, linkTo, reverse=false }) {
           <img src={imgSrc} alt={productName } className='h-3/5 lg:h-1/2' />
         </div>
         <div className={`flex flex-col items-center text-center w-full grow px-2 sm:items-start sm:text-left gap-6 ${reverse ? 'sm:pr-7' : 'sm:pl-7'}`}>
-          {product.isNew &&<p className='text-pBrown'>New Product</p>}
+          {product.isNew &&<p className='text-pBrown uppercase'>New Product</p>}
           <h2 className="text-2xl font-bold">{productName}</h2>
           <p className='text-sm sm:text-base'>{product.description}</p>
           <Button to={linkTo} variant='cta' className='w-auto' >See Product</Button>
