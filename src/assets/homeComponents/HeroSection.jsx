@@ -18,7 +18,7 @@ function HeroSection() {
           <span className='text-sm uppercase'>New Product</span>
           <h1 className='text-4xl font-bold'>XX99 Mark II <br /> Headphones</h1>
           <p className='text-sm text-center w-1/2 mx-auto lg:text-left lg:ml-0 '>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-          <Button to="headphonesp" variant="cta" className="mt-4">SEE PRODUCT </Button>
+          <Button to="headphones" variant="cta" className="mt-4">SEE PRODUCT </Button>
           {/* <Link to='headphones' className='bg-pBrown text-white py-2 px-3 inline-block will-change-auto rounded '>Shop Now</Link> */}
         </div>
       </div>

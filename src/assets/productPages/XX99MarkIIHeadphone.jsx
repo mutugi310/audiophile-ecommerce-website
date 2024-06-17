@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 function XX99MarkIIHeadphone() {
   return (
-    <div>XX99MarkIIHeadphone</div>
+    <div className='text-black'>XX99MarkIIHeadphone</div>
   )
 }
 

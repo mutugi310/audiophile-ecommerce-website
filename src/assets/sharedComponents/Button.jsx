@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Button({ children, to, onClick, type='button', variant='cta', className='', ...props }) {
     //Base classes to be used in all buttons
-    const baseClasses = 'inline-block text-center py-2 px-4 rounded';
+    const baseClasses = 'inline-block text-center py-2 px-4 rounded pointer';
     //Classes specific to button variants in this project
     const variantClasses = {
         cta: 'bg-pBrown text-white hover:bg-pDarkBrown',
