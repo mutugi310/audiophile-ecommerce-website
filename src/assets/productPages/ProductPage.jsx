@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import MoreProductDetailsCard from '../sharedComponents/MoreProductDetailsCard '
 
 
 function ProductPage() {
@@ -9,9 +10,17 @@ function ProductPage() {
     const handleGoBack=()=>{
         navigate(-1)
     }
+   
     //nb: btn nGoBack={handleGoBack}
   return (
-    <div>ProductPage: {productName}</div>
+    <>
+      
+      <MoreProductDetailsCard 
+        productName={productName}
+        onGoBack={handleGoBack}
+        
+      />
+    </>
   )
 }
 
