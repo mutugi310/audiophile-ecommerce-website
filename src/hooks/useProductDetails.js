@@ -41,6 +41,7 @@ function useProductDetails(productName) {
        //set product details
         setProductDetails({
           name: product.name,
+          slug: product.slug,
           description: product.description,
           isNew: product.new,
           category:product.category,

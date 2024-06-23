@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProductPitch from '../assets/sharedComponents/ProductPitch'
 import ProductsPreview from '../assets/sharedComponents/ProductsPreview'
@@ -12,6 +12,7 @@ import XX59Img from '../assets/product-xx59-headphones/desktop/image-category-pa
 
 
 function Headphones() {
+  //const [reverseDiv, setReverseDiv] = useState(false)
  
   const navigate = useNavigate()
   const handleClick = (productName) => {
@@ -22,7 +23,7 @@ function Headphones() {
     <>
       <HeroBanner title='Headphones' ></HeroBanner>
      
-     {/*  <div className="headphones-page">
+      {/* <div className="headphones-page">
         {headphones.map((product) => (
           <ProductDetailsCard
             key={product.id}
@@ -31,8 +32,9 @@ function Headphones() {
             description={product.description}
             image={product.image}
             onSeeMore={() => handleClick(product.name)}
-            reverse={false}
+            reverse={reverseDiv}
           />
+          
         ))}
       </div> */}
      

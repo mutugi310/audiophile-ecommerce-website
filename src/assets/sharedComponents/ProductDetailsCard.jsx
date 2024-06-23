@@ -38,7 +38,7 @@ ProductDetailsCard.propTypes = {
   /* imgSrc: PropTypes.string.isRequired, */
   /* title: PropTypes.string.isRequired, */
  /*  description: PropTypes.string.isRequired, */
-  linkTo: PropTypes.string.isRequired,
+  linkTo: PropTypes.string,
   reverse: PropTypes.bool,
 }
 

@@ -11,9 +11,9 @@ function Button({ children, to, onClick, type='button', variant='cta', className
         cta: 'bg-pBrown text-white hover:bg-pDarkBrown',
         cta2: 'text-pBlack hover:bg-pBlack hover:text-white',
         shop: 'bg-none border-none text-pBlack2 font-medium  hover:text-pBrown trasition duration-300',
-        increment: 'bg-green-500 text-white hover:bg-green-700',
-        decrement: 'bg-red-500 text-white hover:bg-red-700',
-        checkout: 'bg-black text-white hover:bg-gray-800',
+        increment: 'bg-pGray text-pBlack hover:text-pBrown',
+        decrement: 'bg-pGray text-pBlack hover:text-pBrown',
+        
     };
     //combine base and variant classes
     const classes = `${className} ${baseClasses} ${variantClasses[variant]} `;
@@ -38,7 +38,7 @@ Button.propTypes = {
     to: PropTypes.string,
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
-    variant: PropTypes.oneOf(['cta','cta2','shop', 'increment', 'decrement', 'checkout']),
+    variant: PropTypes.oneOf(['cta','cta2','shop', 'increment', 'decrement']),
     className: PropTypes.string,
   };
   

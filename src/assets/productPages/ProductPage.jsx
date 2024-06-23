@@ -10,7 +10,7 @@ function ProductPage() {
     const handleGoBack=()=>{
         navigate(-1)
     }
-   
+    
     //nb: btn nGoBack={handleGoBack}
   return (
     <>
@@ -18,7 +18,7 @@ function ProductPage() {
       <MoreProductDetailsCard 
         productName={productName}
         onGoBack={handleGoBack}
-        
+             
       />
     </>
   )

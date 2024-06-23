@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import cartImg from "../assets/imgs/ShapeCart.png"
 import { FiMenu, FiX } from 'react-icons/fi';
-function Header() {
+import Button from '../assets/sharedComponents/Button';
+
+
+function Header({handleCartOpen}) {
   const [openMenu, setOpenMenu] = useState(false)
   function toggleMenu() {
     setOpenMenu(!openMenu)
@@ -37,9 +40,10 @@ function Header() {
           </ul>
         </nav>
         <div>
-        <NavLink to='cart' className={({ isActive }) => isActive ? "text-red-500" : "hover:text-pBrown"}>
-          <img src={cartImg} alt='shopping cart'></img>
-        </NavLink>
+          
+          <button  onClick={handleCartOpen} className="relative focus:outline-none">
+            <img src={cartImg} alt='shopping cart'></img>
+          </button>
         </div>
       </div>
     {/* mobile navigation */}
