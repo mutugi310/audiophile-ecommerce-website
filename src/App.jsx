@@ -5,12 +5,12 @@ import './App.css'
 import Header from './pages/Header'
 import Home from './pages/Home'
 import Footer from './pages/Footer'
-
+import Cart from "./pages/Cart"
 
 const Headphones = lazy(()=> import('./pages/Headphones'))
 const Speakers = lazy(()=> import('./pages/Speakers'))
 const Earphones = lazy(()=> import('./pages/Earphones'))
-const Cart = lazy(()=> import('./pages/Cart'))
+//const Cart = lazy(()=> import('./pages/Cart'))
 const Checkout = lazy(()=> import('./pages/Checkout'))
 const ProductPage = lazy(()=> import('./assets/productPages/ProductPage'))
 
@@ -36,7 +36,7 @@ function App() {
                 <Route path="/product/:productName" element={<ProductPage />} />
                 <Route path='speakers' element={<Speakers />} />
                 <Route path='earphones' element={<Earphones />} />
-                <Route path='/cart' element={<Cart />} />
+                <Route path='cart' element={<Cart />} />
                 <Route path='checkout' element={<Checkout onClose={toggleCart} />} />
                 
               </Routes>
