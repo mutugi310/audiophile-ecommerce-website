@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom'
 import cartImg from "../assets/imgs/ShapeCart.png"
 import { FiMenu, FiX } from 'react-icons/fi';
 import Button from '../assets/sharedComponents/Button';
+import { useCart } from '../context/CartContext';
 
 
 function Header({handleCartOpen}) {
   const [openMenu, setOpenMenu] = useState(false)
+  const {state} = useCart()
   function toggleMenu() {
     setOpenMenu(!openMenu)
   }
@@ -40,11 +42,15 @@ function Header({handleCartOpen}) {
             </li>
           </ul>
         </nav>
-        <div>
-          
+        <div className=' relative z-50'>
           <button  onClick={handleCartOpen} className="relative focus:outline-none">
             <img src={cartImg} alt='shopping cart'></img>
           </button>
+          {state.cart.length > 0 && (
+          <div className='absolute top-5 left-4 flex items-center justify-center h-4 w-4 bg-pBrown text-white text-sm font-bold rounded-full'>
+            {state.cart.length}
+          </div>
+      )}
         </div>
       </div>
     {/* mobile navigation */}

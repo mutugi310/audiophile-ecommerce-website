@@ -21,12 +21,12 @@ function Cart({onClose}) {
     
     <div className='fixed inset-0 flex justify-end bg-black bg-opacity-20 '>
       <div className='bg-white w-fit max-h-[70vh]  p-4 shadow-lg flex fixed flex-col top-16 right-20 overflow-y-auto '>
-        <button className=" text-center text-2xl" onClick={onClose}>x</button>
+        {/* <button className=" text-center text-2xl" onClick={onClose}>x</button> */}
         { (!state.cart || state.cart.length === 0)
         ? (<p className='text-xl text-center bg-green-300  '>Your cart is empty</p>)
         : (<>
         <div className='flex justify-between'>
-          <h2 className='text-xl font-bold uppercase bg-white'>Cart</h2>
+          <h2 className='text-xl font-bold uppercase bg-white'>Cart({state.cart.length})</h2>
           <button onClick={removeAllItems} className='text-pBrown'>Remove All</button>
         </div>
         {state.cart?.map(item => {
