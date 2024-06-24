@@ -7,10 +7,12 @@ import Earphones from './pages/Earphones'
 import Cart from './pages/Cart'
 import Footer from './pages/Footer'
 import Checkout from './pages/Checkout'
+import ThankYou from './pages/ThankYou'
 import {Routes, Route} from "react-router-dom"
 import ProductPage from './assets/productPages/ProductPage'
 import {CartProvider} from './context/CartContext'
 import { useState } from 'react'
+
 
 function App() {
    const [isCartOpen, setIsCartOpen] = useState(false)
@@ -34,6 +36,7 @@ function App() {
               <Route path='earphones' element={<Earphones />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='checkout' element={<Checkout onClose={toggleCart} />} />
+              
             </Routes>
           </main>
           <Footer />

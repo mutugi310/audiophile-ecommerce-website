@@ -3,21 +3,29 @@ import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import Button from '../assets/sharedComponents/Button'
 import cashOnDelIcon from '../assets/checkout/icon-cash-on-delivery.svg'
+import ThankYou from './ThankYou'
 
 function Checkout({onClose}) {
     const navigate = useNavigate()
     const {state}= useCart()
+    const [showThankYou, setShowThankYou] = useState(false);
     const handleGoBack=()=>{
         navigate(-1)
         onClose()
     }
     const handleContinue = () => {
         alert('Continue to payment');
+        setShowThankYou(true)
       };
-    
+    const handleGoBackHome=()=>{
+      alert('Thankyou for shopping with us')
+      setShowThankYou(false)
+      navigate('/')
+    }
    
     return (
-        <div className="container mx-auto p-8">
+        <div className="container mx-auto p-8 bg-pGray">
+          {showThankYou && <ThankYou onClose ={handleGoBackHome }/>}
           <button onClick={handleGoBack} className="text-pGray-500 mb-4">Go Back</button>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <main className="col-span-2 bg-white p-4 shadow-md rounded">
@@ -72,13 +80,13 @@ function Checkout({onClose}) {
 
                         <div className=' w-full grow flex flex-col gap-4 '>
                             <div className='flex gap-2 border-2 border-pBrown p-4 rounded'>
-                                <input type="checkbox" id='e-money' name='e-money' value='E-money' className=''/>   
+                                <input type="radio" id='e-money' name='payment-details' value='E-money' className=''/>   
                                 <label htmlFor="e-money">E-money</label>
                                
                             </div>
                            
                             <div className='flex gap-2 border-2 border-pBrown p-4 rounded'>
-                                <input type="checkbox" id='Cash-on-delivery' name='Cash-on-delivery' value='Cash-on-delivery' className=''/>
+                                <input type="radio" id='Cash-on-delivery' name='payment-details' value='Cash-on-delivery' className=''/>
                                 <label htmlFor="Cash-on-delivery">Cash on Delivery</label>
                             </div>
                             
@@ -94,7 +102,7 @@ function Checkout({onClose}) {
 
             </main>
             
-            <aside className="bg-white p-4 shadow-md rounded">
+            <aside className="bg-white p-4 shadow-md rounded h-fit">
               <h2 className="text-2xl font-bold mb-4">Summary</h2>
               {state.cart.map((item) => (
                 <div key={item.slug} className="flex justify-between items-center mb-4">
